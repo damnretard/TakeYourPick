@@ -14,8 +14,11 @@ class MainActivity : AppCompatActivity() {
         val button1 = findViewById<Button>(R.id.button1)
         val button2 = findViewById<Button>(R.id.button2)
         val bgg = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.bgg)
+        button1.text = "${(1..1000).random()}"
+        button2.text = "${(1..1000).random()}"
 
         button1.setOnClickListener {
+
             val leftNum = button1.text.toString().toInt()
             val rightNum = button2.text.toString().toInt()
             if (leftNum > rightNum){
@@ -25,6 +28,8 @@ class MainActivity : AppCompatActivity() {
                 bgg.setBackgroundColor(Color.RED)
                 Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
             }
+            button1.text = "${(1..1000).random()}"
+            button2.text = "${(1..1000).random()}"
         }
         button2.setOnClickListener {
             val leftNum = button1.text.toString().toInt()
@@ -36,6 +41,8 @@ class MainActivity : AppCompatActivity() {
                 bgg.setBackgroundColor(Color.RED)
                 Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
             }
+            button1.text = "${(1..1000).random()}"
+            button2.text = "${(1..1000).random()}"
         }
 
 
